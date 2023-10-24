@@ -3,24 +3,22 @@ import { NavLink } from 'react-router-dom';
 
 export const StyledContainer = styled.main`
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0;
 `;
 
 export const StyledHeader = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
-  padding: 20px 30px;
+  padding: 20px 20px;
   top: 0;
   left: 0;
   position: sticky;
   z-index: 1100;
   font-size: ${props => props.theme.fontSizes.m};
   text-align: center;
-  background: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.cardBackground};
   box-shadow: ${props => props.theme.shadows.boxShadowHeader};
-  margin-left: -16px;
-  margin-right: -16px;
 
   > nav {
     display: flex;
