@@ -1,7 +1,12 @@
 import React from 'react';
+import { StyledContainer, StyledLoadBtn } from './CatalogPage.styled';
 
 const CatalogPage = () => {
-  return <div>CatalogPage</div>;
+  return (
+    <StyledContainer>
+      <StyledLoadBtn type="button">Load more</StyledLoadBtn>
+    </StyledContainer>
+  );
 };
 
 export default CatalogPage;
