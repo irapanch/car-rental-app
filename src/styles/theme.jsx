@@ -11,7 +11,7 @@ export const theme = {
     btnPrimary: '#1f97a7',
     btnSecondary: '#82b1b1',
     error: '#db680a',
-    gradient: 'linear-gradient(141.22deg, #386b58 9.4%, #4081b6 91.91%)',
+    gradient: 'linear-gradient(141.22deg, #386b58 9.4%, #10395a 91.91%)',
   },
   fonts: {
     body: 'system-ui, sans-serif',
