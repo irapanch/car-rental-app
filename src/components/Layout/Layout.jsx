@@ -1,13 +1,26 @@
 import React from 'react';
-import { StyledNavLink } from './Layout.styled';
+import {
+  StyledContainer,
+  StyledHeader,
+  StyledLogo,
+  StyledNavLink,
+} from './Layout.styled';
+import logoImg from '../img/alert-img.png';
 
 const Layout = () => {
   return (
-    <>
-      <StyledNavLink to="/">Home</StyledNavLink>
-      <StyledNavLink to="/catalog">Catalog</StyledNavLink>
-      <StyledNavLink to="/favorites">Favorites</StyledNavLink>
-    </>
+    <StyledContainer>
+      <StyledHeader>
+        <nav>
+          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/catalog">Catalog</StyledNavLink>
+          <StyledNavLink to="/favorites">Favorites</StyledNavLink>
+        </nav>
+        <StyledLogo to="/">
+          <img src={logoImg} alt="logoImg" />
+        </StyledLogo>
+      </StyledHeader>
+    </StyledContainer>
   );
 };
 
