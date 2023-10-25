@@ -11,16 +11,19 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { favCarReducer } from './favorite/slice';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
 };
-const persistedReducer = persistReducer(persistConfig, catalogCarsReducer);
+const persistedReducer = persistReducer(persistConfig, favCarReducer);
 export const store = configureStore({
   reducer: {
-    adverts: persistedReducer,
+    adverts: catalogCarsReducer,
+
+    favorites: persistedReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
