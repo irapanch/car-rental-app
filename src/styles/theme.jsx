@@ -1,13 +1,13 @@
 export const theme = {
   colors: {
     black: '#140e02',
-    white: '#ebe1ce',
+    white: '#ffffff',
     text: '#081338',
     background: '#bccdd8',
     cardBackground: '#3c86b8',
     lightAccent: '#26deff',
     accent: '#206ea1',
-    btnPrimary: '#1f97a7',
+    btnPrimary: 'rgba(255, 255, 255, 0.8)',
     btnSecondary: '#82b1b1',
     btnLoadMore: '#3470ff',
     muted: ' #0b44cd',

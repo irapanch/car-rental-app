@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 50px 120px;
+  padding: 50px 15px;
 `;
 
 export const StyledLoadBtn = styled.button`

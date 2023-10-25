@@ -47,5 +47,9 @@ export const StyledSpan = styled(NavLink)`
   display: inline;
   max-width: 500px;
   text-align: end;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.btnPrimary};
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
 `;
