@@ -1,13 +1,11 @@
 import React from 'react';
-import {
-  StyledContainer,
-  StyledLoadBtn,
-} from 'pages/CatalogPage/CatalogPage.styled';
+import { StyledContainer } from 'pages/CatalogPage/CatalogPage.styled';
+import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 
 const UserFavoritePage = () => {
   return (
     <StyledContainer>
-      <StyledLoadBtn type="button">Load more</StyledLoadBtn>
+      <LoadMoreBtn />
     </StyledContainer>
   );
 };

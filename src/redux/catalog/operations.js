@@ -6,7 +6,7 @@ export const searchApi = axios.create({
 });
 
 export const fetchAPI = createAsyncThunk(
-  'adverts/fetchAll',
+  'adverts/catalog',
   async ({ page, limit }, thunkApi) => {
     try {
       const { data } = await searchApi.get('/adverts', {

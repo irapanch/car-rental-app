@@ -17,17 +17,17 @@ export const slice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchAPI.fulfilled, (state, action) => {
-        state.items = action.payload;
-        state.isLoading = false;
-        state.error = false;
+        state.adverts.items = action.payload;
+        state.adverts.isLoading = false;
+        state.adverts.error = false;
       })
       .addCase(fetchAPI.pending, (state, action) => {
-        state.isLoading = true;
-        state.error = null;
+        state.adverts.isLoading = true;
+        state.adverts.error = null;
       })
       .addCase(fetchAPI.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
+        state.adverts.isLoading = false;
+        state.adverts.error = action.payload;
       });
   },
 });
