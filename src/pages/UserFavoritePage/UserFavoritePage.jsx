@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyledContainer } from 'pages/CatalogPage/CatalogPage.styled';
-import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
+import FavorCards from 'components/FavorCards/FavorCards';
 
 const UserFavoritePage = () => {
   return (
     <StyledContainer>
-      <LoadMoreBtn />
+      <FavorCards />
     </StyledContainer>
   );
 };

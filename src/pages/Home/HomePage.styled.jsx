@@ -52,4 +52,10 @@ export const StyledSpan = styled(NavLink)`
   &:focus {
     transform: scale(1.05);
   }
+  &.favspan {
+    color: ${props => props.theme.colors.text};
+    font-size: ${props => props.theme.fontSizes.l};
+    font-weight: ${props => props.theme.fontWeights.medium};
+    display: block;
+  }
 `;

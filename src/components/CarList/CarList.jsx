@@ -21,6 +21,8 @@ import {
 } from './CarList.styled';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 import icon from '../../img/sprite.svg';
+import { selectFavoriteCarList } from 'redux/favorite/selectors';
+import { addFavorites, deleteFavorites } from 'redux/favorite/slice';
 const CarList = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
@@ -36,48 +38,78 @@ const CarList = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
+  const favoriteCar = useSelector(selectFavoriteCarList);
+
+  const isAdded = item => {
+    return favoriteCar.some(favCar => favCar.id === item.id);
+  };
+  const handleAddFav = item => {
+    if (isAdded(item)) {
+      dispatch(deleteFavorites(item.id));
+    } else {
+      dispatch(addFavorites(item));
+    }
+  };
+
   return (
     <>
       {isLoading && <Loader />}
-      {error && <p>Error </p>}
+      {error && <p>Error</p>}
       <StyledImageGallery>
         {cars.length > 0 ? (
-          cars.map(item => (
-            <StyledListItem key={item.id}>
-              <StyledImgContainer>
-                <img
-                  src={item.img}
-                  alt={item.model}
-                  height={268}
-                  loading="lazy"
-                />
-                <StyledFavBtn
-                  type="button"
-                  // onClick={() => addFavorite(id, getFavoriteCars, setIsFavorite)}
-                >
-                  <svg className={`icon `}>
-                    <use href={`${icon}#icon-heart`}></use>
-                  </svg>
-                </StyledFavBtn>
-              </StyledImgContainer>
-              <StyledDesc>
-                <StyledTitleWrap>
-                  <StyledTitle>
-                    <span className="make">
-                      {item.make} <span className="accent">{item.model},</span>{' '}
-                      {item.year}
-                    </span>
-                    <span className="price">{item.rentalPrice}</span>
-                  </StyledTitle>
-                </StyledTitleWrap>
-                <StyledInfo>{`Ukraine | ${item.rentalCompany} | ${item.type} | ${item.id}`}</StyledInfo>
-              </StyledDesc>
+          cars.map(item => {
+            const isAdded = favoriteCar.some(favCar => favCar.id === item.id);
 
-              <StyledLearnMoreBtn type="button">Learn more</StyledLearnMoreBtn>
-            </StyledListItem>
-          ))
+            return (
+              <StyledListItem key={item.id}>
+                <StyledImgContainer>
+                  <img
+                    src={item.img}
+                    alt={`${item.model} ${item.make}`}
+                    height={268}
+                    loading="lazy"
+                    onError={e => {
+                      e.currentTarget.src =
+                        'https://automoto.ua/uploads/media/editor/adbe/2-electromobil-LynkCo-02-ecotechnica-com-ua-2.jpg';
+                    }}
+                  />
+                  <StyledFavBtn
+                    type="button"
+                    onClick={() => handleAddFav(item)}
+                  >
+                    {isAdded ? (
+                      <svg className={`icon favorite`}>
+                        <use href={`${icon}#icon-heart`}></use>
+                      </svg>
+                    ) : (
+                      <svg className={`icon `}>
+                        <use href={`${icon}#icon-heart`}></use>
+                      </svg>
+                    )}
+                  </StyledFavBtn>
+                </StyledImgContainer>
+                <StyledDesc>
+                  <StyledTitleWrap>
+                    <StyledTitle>
+                      <span className="make">
+                        {item.make}{' '}
+                        <span className="accent">{item.model},</span>{' '}
+                        {item.year}
+                      </span>
+                      <span className="price">{item.rentalPrice}</span>
+                    </StyledTitle>
+                  </StyledTitleWrap>
+                  <StyledInfo>{`Ukraine | ${item.rentalCompany} | ${item.type} | ${item.id}`}</StyledInfo>
+                </StyledDesc>
+
+                <StyledLearnMoreBtn type="button">
+                  Learn more
+                </StyledLearnMoreBtn>
+              </StyledListItem>
+            );
+          })
         ) : (
-          <p>try again</p>
+          <p>No results</p>
         )}
       </StyledImageGallery>
       <LoadMoreBtn onClick={handleLoadMore} />
