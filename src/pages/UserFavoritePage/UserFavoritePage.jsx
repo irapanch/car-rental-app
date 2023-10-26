@@ -2,10 +2,10 @@ import React from 'react';
 import { StyledContainer } from 'pages/CatalogPage/CatalogPage.styled';
 import FavorCards from 'components/FavorCards/FavorCards';
 
-const UserFavoritePage = () => {
+const UserFavoritePage = ({ toggleModal, setCurrentCar }) => {
   return (
     <StyledContainer>
-      <FavorCards />
+      <FavorCards toggleModal={toggleModal} setCurrentCar={setCurrentCar} />
     </StyledContainer>
   );
 };

@@ -2,10 +2,10 @@ import React from 'react';
 import { StyledContainer } from './CatalogPage.styled';
 import CarList from 'components/CarList/CarList';
 
-const CatalogPage = () => {
+const CatalogPage = ({ toggleModal, setCurrentCar }) => {
   return (
     <StyledContainer>
-      <CarList />
+      <CarList toggleModal={toggleModal} setCurrentCar={setCurrentCar} />
     </StyledContainer>
   );
 };

@@ -18,7 +18,7 @@ import { selectError, selectIsLoading } from '../../redux/catalog/selectors';
 import icon from '../../img/sprite.svg';
 import { StyledSpan } from 'pages/Home/HomePage.styled';
 
-const FavorCards = () => {
+const FavorCards = ({ toggleModal, setCurrentCar }) => {
   const dispatch = useDispatch();
   const favoriteCar = useSelector(selectFavoriteCarList);
   const isLoading = useSelector(selectIsLoading);
@@ -69,7 +69,15 @@ const FavorCards = () => {
                 <StyledInfo>{`Ukraine | ${item.rentalCompany} | ${item.type} | ${item.id}`}</StyledInfo>
               </StyledDesc>
 
-              <StyledLearnMoreBtn type="button">Learn more</StyledLearnMoreBtn>
+              <StyledLearnMoreBtn
+                type="button"
+                onClick={() => {
+                  toggleModal(toggleModal);
+                  setCurrentCar(setCurrentCar);
+                }}
+              >
+                Learn more
+              </StyledLearnMoreBtn>
             </StyledListItem>
           ))
         ) : (

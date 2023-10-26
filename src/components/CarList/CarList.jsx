@@ -23,7 +23,9 @@ import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 import icon from '../../img/sprite.svg';
 import { selectFavoriteCarList } from 'redux/favorite/selectors';
 import { addFavorites, deleteFavorites } from 'redux/favorite/slice';
-const CarList = () => {
+// import { ModalWindow } from 'components/Modal/Modal';
+
+const CarList = ({ toggleModal, setCurrentCar }) => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const limit = 12;
@@ -32,7 +34,7 @@ const CarList = () => {
     dispatch(fetchAPI({ page, limit }));
   }, [dispatch, page, limit]);
   const handleLoadMore = () => {
-    setPage(page + 1);
+    setPage(prevPage => prevPage + 1);
   };
   const cars = useSelector(selectItems);
   const isLoading = useSelector(selectIsLoading);
@@ -102,7 +104,13 @@ const CarList = () => {
                   <StyledInfo>{`Ukraine | ${item.rentalCompany} | ${item.type} | ${item.id}`}</StyledInfo>
                 </StyledDesc>
 
-                <StyledLearnMoreBtn type="button">
+                <StyledLearnMoreBtn
+                  type="button"
+                  onClick={() => {
+                    toggleModal(toggleModal);
+                    setCurrentCar(setCurrentCar);
+                  }}
+                >
                   Learn more
                 </StyledLearnMoreBtn>
               </StyledListItem>
