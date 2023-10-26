@@ -7,6 +7,7 @@ export const StyledContainer = styled.form`
   max-width: 100%;
   @media screen and (min-width: 859px) {
     display: flex;
+    flex-direction: row;
     width: 859px;
     height: 74px;
     align-items: flex-end;
@@ -147,5 +148,8 @@ export const StyledFilterButton = styled.button`
   &:hover,
   &:focus {
     background-color: ${props => props.theme.colors.muted};
+  }
+  @media screen and (min-width: 859px) {
+    margin: 0;
   }
 `;
