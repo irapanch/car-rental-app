@@ -12,6 +12,7 @@ export const theme = {
     btnLoadMore: '#3470ff',
     muted: ' #0b44cd',
     error: '#db680a',
+    inputBg: `#f7f7fb`,
     gradient: 'linear-gradient(141.22deg, #386b58 9.4%, #10395a 91.91%)',
   },
   fonts: {
