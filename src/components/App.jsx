@@ -5,6 +5,8 @@ import CatalogPage from '../pages/CatalogPage/CatalogPage';
 import UserFavoritePage from '../pages/UserFavoritePage/UserFavoritePage';
 import { useState } from 'react';
 import { ModalWindow } from './Modal/Modal';
+import ScrollToTop from 'react-scroll-up';
+import { StyledUpSpan } from '../pages/Home/HomePage.styled';
 
 export const App = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -45,6 +47,24 @@ export const App = () => {
           currentCar={currentCar}
         ></ModalWindow>
       )}
+      <ScrollToTop
+        showUnder={120}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bottom: 35,
+          background:
+            'linear-gradient(141.22deg, #386b58 9.4%, #10395a 91.91%)',
+          width: '42px',
+          height: '42px',
+          padding: '8px',
+          borderRadius: '15%',
+          boxShadow: '0px 2px 4px -1px rgba(0, 0, 0, 0.2)',
+        }}
+      >
+        <StyledUpSpan>&#8593;</StyledUpSpan>
+      </ScrollToTop>
     </>
   );
 };
