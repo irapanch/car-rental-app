@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import icon from '../../img/sprite.svg';
+import { carBrands, prices } from '../helpers/const';
+
 import {
   StyledFilterButton,
   StyledForm,
@@ -13,32 +15,7 @@ import {
 const SearchBar = () => {
   const [brandList, setBrandList] = useState(false);
   const [pricelList, setPricelList] = useState(false);
-  const carBrands = [
-    'Enter the text',
-    'Buick',
-    'Volvo',
-    'HUMMER',
-    'Subaru',
-    'Mitsubishi',
-    'Nissan',
-    'Lincoln',
-    'GMC',
-    'Hyundai',
-    'MINI',
-    'Bentley',
-    'Aston Martin',
-    'Pontiac',
-    'Lamborghini',
-    'Audi',
-    'BMW',
-    'Chevrolet',
-    'Mercedes-Benz',
-    'Chrysler',
-    'Kia',
-    'Land',
-  ];
 
-  const prices = ['', 10, 20, 30, 40, 50, 60, 70, 80, 100];
   const dataSubmit = e => {
     e.preventDefault();
   };
