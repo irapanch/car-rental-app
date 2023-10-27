@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import icon from '../../img/sprite.svg';
-
+import PropTypes from 'prop-types';
 import {
   StyledOverlay,
   StyledModal,
@@ -25,7 +25,7 @@ import {
 const phoneNumber = '+380730000000';
 
 export const ModalWindow = ({ toggleModal }) => {
-  //   const item = useSelector(selectItems);
+  // const item = useSelector(selectItems);
 
   useEffect(() => {
     document.body.classList.add('modal-open');
@@ -47,6 +47,7 @@ export const ModalWindow = ({ toggleModal }) => {
   const handleClick = evt => {
     if (evt.target === evt.currentTarget) {
       toggleModal();
+
       document.body.classList.remove('modal-open');
     }
   };
@@ -97,7 +98,7 @@ export const ModalWindow = ({ toggleModal }) => {
             <StyledSubTitle>Rental Conditions:</StyledSubTitle>
             <StyledConditionsWrap>
               <StyledConditionText>
-                Minimum age: <span>25</span>
+                Minimum age: <span> {` 25`}</span>
               </StyledConditionText>
               <StyledConditionText>
                 {`Valid driver’s license`}
@@ -106,10 +107,10 @@ export const ModalWindow = ({ toggleModal }) => {
                 {`Security deposite required `}
               </StyledConditionText>
               <StyledConditionText>
-                Mileage: <span>{`5,832`}</span>
+                Mileage: <span> {` 5,832`}</span>
               </StyledConditionText>
               <StyledConditionText>
-                Price: <span>500$</span>
+                Price: <span> {` 500$`}</span>
               </StyledConditionText>
             </StyledConditionsWrap>
           </StyledSubWrap>
@@ -120,4 +121,8 @@ export const ModalWindow = ({ toggleModal }) => {
       </StyledModal>
     </StyledOverlay>
   );
+};
+
+ModalWindow.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
 };

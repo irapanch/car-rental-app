@@ -43,10 +43,7 @@ export const StyledCardWrap = styled.div`
 `;
 
 export const StyledCloseButton = styled.button`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
+  margin-left: auto;
   background-color: transparent;
   border: none;
 
@@ -59,6 +56,11 @@ export const StyledCloseButton = styled.button`
     &:focus {
       stroke: ${props => props.theme.colors.btnLoadMore};
     }
+  }
+  @media screen and (min-width: 485px) {
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 `;
 

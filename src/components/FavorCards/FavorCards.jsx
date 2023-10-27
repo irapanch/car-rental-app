@@ -17,6 +17,7 @@ import {
 import { selectError, selectIsLoading } from '../../redux/catalog/selectors';
 import icon from '../../img/sprite.svg';
 import { StyledSpan } from 'pages/Home/HomePage.styled';
+import PropTypes from 'prop-types';
 
 const FavorCards = ({ toggleModal, setCurrentCar }) => {
   const dispatch = useDispatch();
@@ -92,3 +93,7 @@ const FavorCards = ({ toggleModal, setCurrentCar }) => {
 };
 
 export default FavorCards;
+FavorCards.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+  setCurrentCar: PropTypes.func.isRequired,
+};

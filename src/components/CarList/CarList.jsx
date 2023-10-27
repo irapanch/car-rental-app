@@ -23,12 +23,16 @@ import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 import icon from '../../img/sprite.svg';
 import { selectFavoriteCarList } from 'redux/favorite/selectors';
 import { addFavorites, deleteFavorites } from 'redux/favorite/slice';
-// import { ModalWindow } from 'components/Modal/Modal';
+import PropTypes from 'prop-types';
 
 const CarList = ({ toggleModal, setCurrentCar }) => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const limit = 12;
+  const handleLearnMoreClick = id => {
+    toggleModal(true);
+    setCurrentCar(id);
+  };
 
   useEffect(() => {
     dispatch(fetchAPI({ page, limit }));
@@ -106,10 +110,7 @@ const CarList = ({ toggleModal, setCurrentCar }) => {
 
                 <StyledLearnMoreBtn
                   type="button"
-                  onClick={() => {
-                    toggleModal(toggleModal);
-                    setCurrentCar(setCurrentCar);
-                  }}
+                  onClick={() => handleLearnMoreClick(item.id)}
                 >
                   Learn more
                 </StyledLearnMoreBtn>
@@ -124,5 +125,8 @@ const CarList = ({ toggleModal, setCurrentCar }) => {
     </>
   );
 };
-
 export default CarList;
+CarList.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+  setCurrentCar: PropTypes.func.isRequired,
+};

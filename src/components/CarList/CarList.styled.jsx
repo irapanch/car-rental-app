@@ -63,8 +63,8 @@ export const StyledFavBtn = styled.button`
     }
 
     &.favorite {
-      stroke: ${props => props.theme.colors.btnSecondary};
-      fill: ${props => props.theme.colors.btnSecondary};
+      stroke: ${props => props.theme.colors.btnLoadMore};
+      fill: ${props => props.theme.colors.btnLoadMore};
     }
   }
 `;
