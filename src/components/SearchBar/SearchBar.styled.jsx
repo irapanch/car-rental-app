@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledContainer = styled.form`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,12 +46,9 @@ export const StyledSelectContainer = styled.div`
     position: absolute;
     right: 18px;
     top: 14px;
-
     width: 20px;
     height: 20px;
-
     pointer-events: none;
-
     &:hover,
     &:focus {
       background-color: ${props => props.theme.colors.btnSecondary};
@@ -64,9 +61,8 @@ export const StyledSelect = styled.select`
   justify-content: center;
   align-items: center;
   gap: 32px;
-
+  box-shadow: ${props => props.theme.shadows.boxShadowHeader};
   height: 48px;
-
   border-radius: 14px;
   background: ${props => props.theme.colors.inputBg};
   border-color: transparent;
@@ -92,7 +88,7 @@ export const StyledInput = styled.input`
   justify-content: center;
   align-items: center;
   gap: 32px;
-
+  box-shadow: ${props => props.theme.shadows.boxShadowHeader};
   border-radius: 14px;
   background: ${props => props.theme.colors.inputBg};
   border-color: transparent;
@@ -105,7 +101,6 @@ export const StyledInput = styled.input`
     width: 140px;
     height: 48px;
     padding: 14px 24px 14px 24px;
-
     border-radius: 14px 0px 0px 14px;
     border-right: 1px solid rgba(138, 138, 137, 0.2);
     background: ${props => props.theme.colors.inputBg};
@@ -125,6 +120,13 @@ export const StyledInput = styled.input`
       width: 160px;
     }
   }
+  &::placeholder {
+    color: ${props => props.theme.colors.text};
+  }
+  /* &:hover,
+  &:focus {
+    appearance: none;
+  } */
 `;
 
 export const StyledFilterButton = styled.button`
@@ -137,7 +139,7 @@ export const StyledFilterButton = styled.button`
   border-radius: 12px;
   border-color: transparent;
   background: ${props => props.theme.colors.btnLoadMore};
-
+  box-shadow: ${props => props.theme.shadows.boxShadowSearch};
   color: ${props => props.theme.colors.white};
   font-family: Manrope;
   font-size: ${props => props.theme.fontSizes.s};
