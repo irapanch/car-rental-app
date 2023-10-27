@@ -21,7 +21,7 @@ export const slice = createSlice({
         state.adverts.isLoading = false;
         state.adverts.error = false;
       })
-      .addCase(fetchAPI.pending, (state, action) => {
+      .addCase(fetchAPI.pending, state => {
         state.adverts.isLoading = true;
         state.adverts.error = null;
       })

@@ -51,6 +51,6 @@ export const theme = {
     textShadow: '0 1px 1px #fff',
     boxShadowHeader: ' 0px 3px 5px -3px #161718',
     boxShadowDiv: '10px 10px 18px -12px #000000',
-    boxShadowSearch: '8px 8px 8px -8px #000000, -1px 5px 8px 0px #000000',
+    boxShadowSearch: '2px 5px 5px -3px #161718',
   },
 };
