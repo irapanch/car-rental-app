@@ -50,7 +50,7 @@ export const StyledCloseButton = styled.button`
   & .icon {
     width: 24px;
     height: 24px;
-    stroke: #121417;
+    stroke: ${props => props.theme.colors.text};
 
     &:hover,
     &:focus {
@@ -94,7 +94,7 @@ export const StyledImage = styled.img`
 `;
 
 export const StyledTitle = styled.h2`
-  color: #121417;
+  color: ${props => props.theme.colors.text};
   font-size: ${props => props.theme.fontSizes.ml};
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: ${props => props.theme.lineHeights.body};
@@ -108,22 +108,18 @@ export const StyledTitle = styled.h2`
 
 export const StyledDescription = styled.p`
   color: rgba(18, 20, 23, 0.5);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.body};
   width: 277px;
   margin-bottom: 14px;
 `;
 
 export const StyledDescriptionText = styled.p`
-  color: #121417;
-
-  font-size: 14px;
-
-  font-weight: 400;
+  color: ${props => props.theme.colors.text};
+  font-size: ${props => props.theme.fontSizes.s};
+  font-weight: ${props => props.theme.fontWeights.normal};
   line-height: 1.43;
-
   margin-bottom: 24px;
 `;
 
@@ -132,14 +128,13 @@ export const StyledSubWrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-
   margin-bottom: 24px;
 `;
 
 export const StyledSubTitle = styled.div`
-  color: #121417;
-  font-size: 14px;
-  font-weight: 500;
+  color: ${props => props.theme.colors.text};
+  font-size: ${props => props.theme.fontSizes.s};
+  font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 1.43;
 `;
 
@@ -152,9 +147,9 @@ export const StyledFuncWrap = styled.div`
 
 export const StyledFuncDescription = styled.p`
   color: rgba(18, 20, 23, 0.5);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.body};
 `;
 
 export const StyledRentalConditionsWrap = styled.div`
@@ -162,7 +157,6 @@ export const StyledRentalConditionsWrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-
   margin-bottom: 24px;
 `;
 
@@ -178,18 +172,16 @@ export const StyledConditionText = styled.p`
   padding: 7px 14px;
   justify-content: center;
   align-items: center;
-
   border-radius: 35px;
   background: #f9f9f9;
-
   color: #363535;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeights.normal};
+  line-height: ${props => props.theme.lineHeights.body};
   letter-spacing: -0.24px;
 
   & span {
-    color: #3470ff;
+    color: ${props => props.theme.colors.spanText};
     font-weight: 600;
   }
 `;
@@ -198,13 +190,11 @@ export const StyledCardButton = styled.a`
   padding: 12px 50px;
   justify-content: center;
   align-items: center;
-
   border-radius: 12px;
-  background: #3470ff;
-
-  color: #fff;
+  background: ${props => props.theme.colors.spanText};
+  color: ${props => props.theme.colors.white};
   font-family: Manrope;
-  font-size: 14px;
+  font-size: ${props => props.theme.fontSizes.s};
   font-style: normal;
   font-weight: 600;
   line-height: 1.43;
@@ -212,6 +202,6 @@ export const StyledCardButton = styled.a`
 
   &:hover,
   &:focus {
-    background: #0b44cd;
+    background: ${props => props.theme.colors.muted};
   }
 `;

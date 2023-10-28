@@ -19,14 +19,9 @@ import {
   StyledCardButton,
   StyledCloseButton,
 } from './Modal.styled';
-// import { useSelector } from 'react-redux';
-// import { selectItems } from 'redux/catalog/selectors';
-
 const phoneNumber = '+380730000000';
 
 export const ModalWindow = ({ toggleModal }) => {
-  // const item = useSelector(selectItems);
-
   useEffect(() => {
     document.body.classList.add('modal-open');
 

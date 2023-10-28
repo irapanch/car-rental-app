@@ -2,7 +2,8 @@ export const theme = {
   colors: {
     black: '#140e02',
     white: '#ffffff',
-    text: '#081338',
+    text: '#121417',
+    spanText: `#3470ff`,
     background: '#bccdd8',
     cardBackground: '#3c86b8',
     lightAccent: '#26deff',

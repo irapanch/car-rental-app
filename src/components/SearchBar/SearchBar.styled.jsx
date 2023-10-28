@@ -123,10 +123,6 @@ export const StyledInput = styled.input`
   &::placeholder {
     color: ${props => props.theme.colors.text};
   }
-  /* &:hover,
-  &:focus {
-    appearance: none;
-  } */
 `;
 
 export const StyledFilterButton = styled.button`
