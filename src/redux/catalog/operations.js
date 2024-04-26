@@ -2,7 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const searchApi = axios.create({
-  baseURL: 'https://6536b8babb226bb85dd28cc5.mockapi.io/adverts',
+  baseURL: 'https://662b9468de35f91de158c264.mockapi.io/',
+  
 });
 
 export const fetchAPI = createAsyncThunk(
